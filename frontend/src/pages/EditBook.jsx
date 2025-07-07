@@ -8,7 +8,7 @@ const EditBook = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:5555/books/${id}`)
+    axios.get(`https://book-store-project-9zfd.onrender.com/books/${id}`)
       .then(res => setForm(res.data))
       .catch(err => console.error(err));
   }, [id]);
@@ -19,7 +19,7 @@ const EditBook = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:5555/books/${id}`, form)
+    axios.put(`https://book-store-project-9zfd.onrender.com/books/${id}`, form)
       .then(() => navigate('/'))
       .catch((err) => console.error(err));
   };
